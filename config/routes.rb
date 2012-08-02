@@ -1,6 +1,10 @@
 Canvas::Application.routes.draw do
   
-  root to: "static_pages#home"
+  resources :attachments, except: [:destroy, :update, :edit]
+  resources :anagrams, except: [:destroy, :index, :update, :edit]
+  
+  
+  root to: "attachments#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
