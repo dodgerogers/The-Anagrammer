@@ -1,0 +1,4 @@
+<%= form_for(Anagram.new) do |f| %>
+	<%= f.text_field :word, placeholder: "word to be anagrammed", class: 'span6' %>
+	<%= f.submit "search", class: 'btn-large btn-success' %>
+	<% end %>

@@ -1,0 +1,10 @@
+<% if anagrams.any? %>
+	<% anagrams.each do |a| %>
+		<div class="well">
+			<h4><%= a.word %></h4>
+					<%= a.anagram %>
+				<br/>
+					posted <%= time_ago_in_words(a.created_at) %> ago
+				</div>
+			<% end %>
+	<% end %>

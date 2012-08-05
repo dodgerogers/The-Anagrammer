@@ -1,8 +1,1 @@
-This is a blank Rails applications setup to my spec, details and configuration:
 
-Rails: 3.2
-Twitter Bootstrap: 2.0.4
-Rspec-Rails
-Static-pages controller and view
-CSS styles and mixins assigned
-Webrick locahost server 

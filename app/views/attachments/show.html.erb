@@ -1,0 +1,8 @@
+<div class="center hero-unit">
+	<h1>find anagrams for...</h1>
+	Filename:  <%= "#{@attachment.filename.capitalize}" %>
+	<br/>
+	<br/>
+	<%= render partial: "anagrams/form" %>
+	</div>
+	<%= render partial: "anagrams/attachment_comments", locals: { attachment: @attachment, anagrams: @anagrams }%>
