@@ -28,6 +28,11 @@ describe AttachmentsController do
          post :create, attachment: @attachment
          response.code.should eq("302")
        end
+       
+    context "with invalid attributes" do
+        it "does not save the new anagram in the database" 
+        it "re-renders the :new template"
+        end
      end
    end
 end
