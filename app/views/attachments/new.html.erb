@@ -1,5 +1,5 @@
 <div class="center hero-unit">
-	<h1>Upload your word list</h1>
+	<h1>Upload your dictionary</h1>
 	<%= form_tag({:controller => 'attachments', :action => 'create'}, :multipart => true ) do %>
 		<%= file_field_tag 'attachment' %>
 		<%= submit_tag "upload", class: "btn btn-success" %>

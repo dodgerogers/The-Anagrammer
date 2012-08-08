@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe Attachment do
   
-  before { @attachment = Attachment.new(filename: "test.txt", content_type: "text") }
+  before { @attachment = Attachment.new(id: 3,filename: "test.txt", content_type: "text", data: (File.read('spec/fixtures/files/words.txt'))) }
   
   subject { @attachment }
   
   it "should respond to..." do
-    subject.should respond_to(:filename)
-    subject.should respond_to(:content_type)
-    subject.should respond_to(:data)
+    should respond_to(:filename)
+    should respond_to(:content_type)
+    should respond_to(:data)
   end
   
   describe "with blank filename should not be valid" do

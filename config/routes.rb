@@ -1,6 +1,6 @@
 Canvas::Application.routes.draw do
   
-  resources :attachments, except: [:destroy, :update, :edit]
+  resources :attachments, except: [:destroy, :update, :edit, :index]
   resources :anagrams, except: [:destroy, :index, :update, :edit]
   
   

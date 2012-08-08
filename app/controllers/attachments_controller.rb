@@ -11,16 +11,17 @@ class AttachmentsController < ApplicationController
   
   def create
     beginning = Time.now
-    return if params[:attachment].blank?
-    
-    @attachment = Attachment.new
-    @attachment.uploaded_file = params[:attachment]
-    @time = (Time.now - beginning)
-    if @attachment.save
-      flash[:success] = "File uploaded in #{@time} seconds"
-      redirect_to @attachment
+    if params[:attachment].blank?
+      flash[:error] = "Please upload a file"
+      render 'new'
     else
-       render 'new'
+      @attachment = Attachment.new
+      @attachment.uploaded_file = params[:attachment]
+      @time = (Time.now - beginning)
+      if @attachment.save
+        flash[:success] = "File uploaded in #{@time} seconds"
+        redirect_to @attachment
+     end
     end
   end
 end

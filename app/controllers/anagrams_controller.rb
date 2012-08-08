@@ -1,12 +1,8 @@
 class AnagramsController < ApplicationController
   
-  before_filter :get_attachment, only: :create
-  
-  def get_attachment
-    @attachment = Attachment.last
-  end
   
   def create
+    @attachment = Attachment.last
     @anagram = @attachment.anagrams.build(params[:anagram])
     if @anagram.save
       flash[:success] = "created"

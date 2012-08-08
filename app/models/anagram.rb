@@ -10,11 +10,11 @@ class Anagram < ActiveRecord::Base
     beginning = Time.now
     results = {}
     self.attachment.data.downcase.split(" ").each {|word| results[word.split("").sort] = [[results[word.split("").sort]].join(" ")] << word }
-        time = Time.new - beginning
         anagram = ''
         if results[(self.word).downcase.split("").sort!] == nil
           anagram = "nothing found"
         else
+          time = Time.new - beginning
           anagram = "#{results[(self.word).downcase.split("").sort!].join(" ")} found in #{time} seconds"
           end
         self.anagram = anagram
